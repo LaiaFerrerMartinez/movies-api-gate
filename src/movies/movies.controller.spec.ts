@@ -18,7 +18,7 @@ describe('MoviesController', () => {
           // 3. Agregar el mock del repositorio de Movie
           provide: getRepositoryToken(Movie),
           useValue: {
-            find: jest.fn(),
+            find: jest.fn().mockResolvedValue([]),
             findOne: jest.fn(),
             save: jest.fn(),
             delete: jest.fn(),
