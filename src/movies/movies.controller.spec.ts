@@ -35,4 +35,14 @@ describe('MoviesController', () => {
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
+
+  it('findAll should return movies from service', async () => {
+    const result = await controller.findAll();
+    expect(result).toBeDefined();
+  });
+
+  it('getMovies should return object with movies array', () => {
+    const result = controller.getMovies();
+    expect(result).toEqual({ movies: [] });
+  });
 });
